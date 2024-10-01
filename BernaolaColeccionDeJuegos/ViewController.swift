@@ -30,18 +30,40 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        mostrar()
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    
+    func mostrar(){
         let context =  (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do{
             try juegos = context.fetch(Juego.fetchRequest())
         } catch {
+            print("entro")
             
         }
+        tableView.reloadData()
+        
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        mostrar()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let siguienteVC = segue.destination as! JuegosViewController
+        siguienteVC.juego = sender as? Juego
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let juego = juegos[indexPath.row]
+            performSegue(withIdentifier: "juegoSegue", sender: juego)
+        
+    }
+    
 
 }
 
