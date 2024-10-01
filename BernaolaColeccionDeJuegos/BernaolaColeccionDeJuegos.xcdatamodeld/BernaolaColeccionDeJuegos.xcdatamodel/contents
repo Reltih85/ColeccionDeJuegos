@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Juego" representedClassName="Juego" syncable="YES" codeGenerationType="class">
+        <attribute name="imagen" attributeType="Binary" allowsCloudEncryption="YES"/>
+        <attribute name="titulo" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Juego" positionX="-63" positionY="-18" width="128" height="59"/>
+    </elements>
 </model>
